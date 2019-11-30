@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+       
+    <title>Javascript class 4</title>
+</head>
+<body>
+
+    <div class="container">
+    <div class="form-row">
+    <div class="form-group col">
+        <label>Name</label>
+        <input type="email" class="form-control" id="pname">
+    </div>
+    <div class="form-group col">
+        <label>Price</label>
+        <input type="number" class="form-control" id="pprice">
+    </div>
+    <div class="form-group col">
+        <label>Qty</label>
+        <input type="number" class="form-control" id="pqty">
+        </div>
+        <div class="form-group col">
+            <label>Total</label>
+            <input type="number" class="form-control" id="ptotal" disabled>
+            </div>
+            <div class="form-group col">
+                <label>&nbsp;</label>
+                <input type="button" value="add" id="btnadd" class="btn btn-success form-control">
+                </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="ptable">
+
+            </tbody>
+        </table>
+
+        
+                  
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+
+    <script>
+        $(function(){
+
+            $('#btnadd').click(function(){
+                var name = $('#pname').val();
+                var price = $('#pprice').val();
+                var qty = $('#pqty').val();
+                var total = parseInt(price) * parseInt(qty);
+
+                var prow = '<tr><td>'+name+'</td><td>'+price+'</td><td>'+qty+'</td><td>'+total+'</td></tr>';
+                $('#ptable').append(prow);
+                var name = $('#pname').val('');
+                var price = $('#pprice').val('');
+                var qty = $('#pqty').val('');
+                $('#pname').focus();
+
+            });
+
+            //total calculation
+            $('#pqty').keyup(function(){
+                var p = parseInt($('#pprice').val());
+                var q = parseInt($('#pqty').val());
+                console.log(p , q);
+            });
+
+
+
+        });
+    </script>
+</body>
+</html>

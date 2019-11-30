@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <title>Javascript class 3</title>
+</head>
+<body>
+
+    <div id="d1">hello 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae beatae hic vel at voluptatem doloremque distinctio explicabo doloribus dicta atque rerum, ratione accusamus eos a corporis nulla quas velit quod?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam praesentium aliquam ducimus nihil pariatur atque doloribus nam earum itaque, eveniet et placeat totam, eligendi repellendus mollitia soluta vero qui?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate commodi exercitationem facere, error dignissimos assumenda sed ea, nesciunt ipsa tempore atque ducimus consequatur cupiditate deserunt dolor voluptas. Esse maiores earum, iste quod architecto id modi voluptates, recusandae, quae molestias quam aperiam quos placeat? Accusantium laboriosam ipsa facere aut amet doloribus vel quia. Nemo aliquam suscipit facilis velit sapiente explicabo, laudantium culpa tempore, id impedit obcaecati sed sint asperiores, excepturi debitis maxime! Odio beatae eaque vitae? Perferendis perspiciatis ipsum eveniet quam? Consequatur eligendi reiciendis, nobis, at nemo, et molestiae quaerat quisquam expedita voluptas ipsam! Numquam error earum libero reiciendis, asperiores aliquam.
+    </div>
+
+    <p class="par" id="par">paragraph 1</p>
+    <p class="par" id="par">paragraph 2</p>
+    <p class="par" id="par">paragraph 3</p>
+    <p class="par" id="par">paragraph 4</p>
+
+    <button id="mybtn">click</button>
+    <form id="my_form">
+        <input type="text" name="first_name"><br>
+        <input type="text" name="last_name"><br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="submit">
+
+    </form>
+
+
+    
+
+    <script>
+        // var countries = ["Bangladesh", "USA", "Uk", "Russia"];
+
+        // countries.forEach(function(cnt, index){
+        //     console.log(cnt);
+
+        // });
+        // var par = document.querySelectorAll('#par');
+
+        // console.log(par);
+
+        // for(var i = 0; i < par.length; i++)
+        // par[i].style.display = 'none';
+
+        $(function(){
+           
+         //console.log($('#d1').html()); 
+         //$('p').css('background', "green");
+         //$('p').hide();
+
+         $('p').click(function(e){
+            $('p').css('background', "white");
+             $(this).css('background', "yellow");
+             //$('p').css('background',"yellow")
+         });
+
+         $('#mybtn').click(function(e){
+             $('#d1').slideToggle(2000);
+
+
+         });
+
+         $('#myform').submit(function(e){
+             e.preventDefault();
+
+             //var first_name = $('input[name="first_name"]').val();
+             var form_data = $('#myform').serialize();
+             console.log(form_data);
+
+         });
+
+        });
+    </script>
+</body>
+</html>
